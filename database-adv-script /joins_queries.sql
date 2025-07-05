@@ -1,3 +1,4 @@
+-- INNER JOIN: Get all bookings with their users
 SELECT
   bookings.booking_id,
   bookings.property_id,
@@ -11,6 +12,7 @@ SELECT
 FROM bookings
 INNER JOIN users
   ON bookings.user_id = users.user_id;
+
 
 
 -- 2️⃣ LEFT JOIN: Get all properties and their reviews (including those with no reviews)

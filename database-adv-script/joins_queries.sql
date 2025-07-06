@@ -14,7 +14,7 @@ INNER JOIN users
   ON bookings.user_id = users.user_id;
 
 
--- 2️⃣ LEFT JOIN: Get all properties and their reviews (including those with no reviews)
+-- 2️⃣ LEFT JOIN: Get all properties and their reviews (including properties with no reviews), ordered by property name
 SELECT
   properties.property_id,
   properties.name AS property_name,
@@ -23,7 +23,9 @@ SELECT
   reviews.comment
 FROM properties
 LEFT JOIN reviews
-  ON properties.property_id = reviews.property_id;
+  ON properties.property_id = reviews.property_id
+ORDER BY properties.name;
+
 
 
 -- 3️⃣ FULL OUTER JOIN: Get all users and bookings (including unmatched ones)

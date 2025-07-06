@@ -12,3 +12,5 @@ CREATE INDEX idx_properties_location ON properties(location);
 
 -- Create index on reviews.property_id for LEFT JOINs and aggregations
 CREATE INDEX idx_reviews_property_id ON reviews(property_id);
+EXPLAIN ANALYZE ...
+-- Seq Scan on bookings, higher cost, slower joins
